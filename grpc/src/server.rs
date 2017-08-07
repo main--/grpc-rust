@@ -11,6 +11,7 @@ use httpbis::Header;
 use httpbis::Headers;
 use httpbis::HttpPartStream;
 use httpbis::stream_part::HttpStreamPart;
+use httpbis::socket::AnySocketAddr;
 
 use stream_item::ItemOrMetadata;
 
@@ -121,7 +122,7 @@ pub struct Server {
 }
 
 impl Server {
-    pub fn local_addr(&self) -> &SocketAddr {
+    pub fn local_addr(&self) -> &AnySocketAddr {
         self.server.local_addr()
     }
 
